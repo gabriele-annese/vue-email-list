@@ -1,0 +1,26 @@
+body{
+    background-color: #0f0e17;
+}
+
+.container{
+    background-color: #fffffe;
+    width: 90%;
+    margin: 30px auto;
+}
+
+.container h2{
+    font-size: 40px;
+    text-align: center;
+}
+
+.email-ctn{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.box-email{
+    color: #f25f4c;
+    font-size: 25px;
+    font-weight: bold;
+    padding: 10px 8px;
+}
