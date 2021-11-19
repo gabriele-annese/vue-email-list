@@ -13,9 +13,9 @@
     <div id="app" class="container">
         <h2>Email-List</h2>
         <div class="email-ctn">
-            <div 
+            <div v-for="(email, index) in emailArray"
             class="box-email">
-                <p></p>
+                <p>{{emailArray[index]}}</p>
             </div>
         </div>
     </div>

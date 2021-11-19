@@ -11,25 +11,23 @@ const app = new Vue({
     el: "#app",
     data:{
         emailArray : [],
-        API: 'https://flynn.boolean.careers/exercises/api/random/mail'
+        API: 'https://flynn.boolean.careers/exercises/api/random/mail',
+        emailIndex:0
     },
     created() {
-        this.genEmail();
+        this.genEmail(10);
     },
     methods:{
-        genEmail(){
-        axios.get(this.API)
-        .then(response => {
-        //    console.log(response.data.response)
-        for(let i = 0; i < 10; i++){
-            this.emailArray.push(response.data.response)
-        }
-        console.log(this.emailArray)
-    })
-        .catch(error => {
-            // handle error
-            console.log(error);
-        })
+
+        genEmail(lun){
+            // usiamo arry form per loopare 
+            Array.from({length: lun}, (i) => {
+                return axios.get(this.API).then(response => {
+                    // pushiamo l email in array
+                    this.emailArray.push(response.data.response)
+                });
+            })
+            console.log(this.emailArray)
         }
     },
 })
