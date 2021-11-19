@@ -21,9 +21,11 @@ const app = new Vue({
         axios.get(this.API)
         .then(response => {
         //    console.log(response.data.response)
-           this.emailArray.push(response.data.response)
-           console.log(this.emailArray)
-        })
+        for(let i = 0; i < 10; i++){
+            this.emailArray.push(response.data.response)
+        }
+        console.log(this.emailArray)
+    })
         .catch(error => {
             // handle error
             console.log(error);
